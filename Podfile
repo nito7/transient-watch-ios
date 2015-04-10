@@ -6,6 +6,7 @@ pod 'AFNetworking', '~> 2.0'
 pod 'SVProgressHUD'
 pod 'SDWebImage', '~> 3.6'
 pod 'MMDrawerController', '~> 0.5.7'
+pod 'PNChart', '0.8'
 end
 
 target 'TransientWatchTests' do
