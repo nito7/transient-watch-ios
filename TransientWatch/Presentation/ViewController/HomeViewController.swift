@@ -53,7 +53,11 @@ class HomeViewController: UIViewController, PNChartDelegate {
         lineChart.chartData = [chartData]
         lineChart.strokeChart()
         lineChart.delegate = self
-        self.view.addSubview(lineChart)
+//        self.view.addSubview(lineChart)
+        
+        let frame = CGRectMake(0, 50, CGRectGetWidth(self.view.frame), 450)
+        let chart = ChartView(frame: frame)
+        self.view.addSubview(chart)
     }
 
     override func didReceiveMemoryWarning() {
