@@ -50,14 +50,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         ////////////////
 //        let headerView = CelestialView.instance()
         let headerView = CelestialView(frame: CGRectMake(0, 0, self.view.frame.size.width - 20, 300))
-        let label = UILabel()
-        label.backgroundColor = UIColor.clearColor()
-        label.textAlignment = .Center
-        label.textColor = UIColor.whiteColor()
-        label.text = "セクションヘッダー"
         self.tableView.setParallaxHeaderView(headerView, mode: VGParallaxHeaderMode.TopFill, height: 300)
-        self.tableView.parallaxHeader.stickyViewPosition = .Bottom
-        self.tableView.parallaxHeader.setStickyView(label, withHeight: 50.0)
         
         /////////////////
         // TableView設定
@@ -85,6 +78,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return 1
     }
     
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "New Update"
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 70
     }
@@ -109,7 +110,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell") as HomeCell
-        cell.textLabel?.text = "Test"
         return cell
     }
     
@@ -117,8 +117,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         scrollView.shouldPositionParallaxHeader()
-        
-        scrollView.parallaxHeader.stickyView.alpha = scrollView.parallaxHeader.progress
     }
 
 }
