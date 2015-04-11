@@ -9,5 +9,27 @@
 import UIKit
 
 class Chart: NSObject {
-   
+    
+    // MARK: - Property
+    
+    var title: String?
+    var x: NSNumber?
+    var y: NSNumber?
+    var maxY: NSNumber?
+    var minY: NSNumber?
+    
+    // LifeCycle
+    
+    init(response: [String: AnyObject]) {
+        super.init()
+        
+        let title = response["title"] as? String
+        let x = response[""] as? NSNumber
+        let y = response[""] as? NSNumber
+        let maxY = response[""] as? NSNumber
+        let minY = response[""] as? NSNumber
+        
+        // だいにゅう...
+    }
+    
 }
