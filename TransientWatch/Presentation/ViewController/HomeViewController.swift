@@ -48,8 +48,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         ////////////////
         // ヘッダー設定
         ////////////////
-        let headerView = CelestialView.instance()
-        headerView.backgroundColor = UIColor.clearColor()
+//        let headerView = CelestialView.instance()
+        let headerView = CelestialView(frame: CGRectMake(0, 0, self.view.frame.size.width - 20, 300))
         let label = UILabel()
         label.backgroundColor = UIColor.clearColor()
         label.textAlignment = .Center

@@ -9,9 +9,40 @@
 import UIKit
 
 class CelestialView: UIView {
-
+    
+    // MARK: - Property
+    
     class func instance() -> CelestialView {
         return UINib(nibName: "CelestialView", bundle: nil).instantiateWithOwner(self, options: nil).first as CelestialView
+    }
+    
+    // MARK: - LifeCycle
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.backgroundColor = UIColor.clearColor()
+        self.drawCelestial()
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Private
+    
+    // 引数にobjectもらって描写
+    // UIButtonで
+    func drawCelestial() {
+        
+        // base circle view
+        let circleFrame = CGRectMake(20, 0, self.frame.size.width - 20, self.frame.size.height - 20)
+        let circle = UIView(frame: circleFrame)
+        circle.layer.cornerRadius = (self.frame.size.width - 20) / 2
+        circle.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.4)
+        self.addSubview(circle)
+        
+        
     }
     
     /*
