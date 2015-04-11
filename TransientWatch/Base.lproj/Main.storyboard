@@ -31,7 +31,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="guO-Di-98s">
-                        <barButtonItem key="leftBarButtonItem" title="メニュー" id="zzl-8q-UYp">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="zzl-8q-UYp">
                             <connections>
                                 <action selector="toggleMenu:" destination="vXZ-lx-hvc" id="dnB-a4-6ht"/>
                             </connections>
@@ -153,4 +153,7 @@
             <point key="canvasLocation" x="-574" y="-24"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Menu" width="25" height="20"/>
+    </resources>
 </document>
