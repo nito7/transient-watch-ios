@@ -19,32 +19,37 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ////////////////
+        // 背景画像の設定
+        ////////////////
         self.view.backgroundColor = UIColor.clearColor()
         self.tableView.backgroundColor = UIColor.clearColor()
-        
-        // Do any additional setup after loading the view.
+        let backGroundImage = UIImage(named: "BackGround")
+        let imageView = UIImageView(image: backGroundImage)
+        imageView.frame = self.view.bounds
+        self.navigationController?.view.insertSubview(imageView, atIndex: 0)
         
 //        let frame = CGRectMake(0, 50, CGRectGetWidth(self.view.frame), 450)
 //        let chart = ChartView(frame: frame)
 //        self.view.addSubview(chart)
         
+        ////////////////
+        // ヘッダー設定
+        ////////////////
         let headerView = CelestialView.instance()
-        
-        let textLabel = UILabel(frame: CGRectMake(0, 100, CGRectGetWidth(self.view.frame), 50))
-        textLabel.textAlignment = .Center
-        textLabel.text = "ヘッダー"
-//        headerView.addSubview(textLabel)
-        
+        headerView.backgroundColor = UIColor.clearColor()
         let label = UILabel()
-        label.backgroundColor = UIColor.redColor()
+        label.backgroundColor = UIColor.clearColor()
         label.textAlignment = .Center
-        label.text = "パララックスへっだー"
+        label.textColor = UIColor.whiteColor()
+        label.text = "セクションヘッダー"
+        self.tableView.setParallaxHeaderView(headerView, mode: VGParallaxHeaderMode.Fill, height: 300)
+        self.tableView.parallaxHeader.stickyViewPosition = .Bottom
+        self.tableView.parallaxHeader.setStickyView(label, withHeight: 50.0)
         
-        self.tableView.setParallaxHeaderView(headerView, mode: VGParallaxHeaderMode.TopFill, height: 300)
-        
-        self.tableView.parallaxHeader.stickyViewPosition = VGParallaxHeaderStickyViewPosition.Bottom
-        self.tableView.parallaxHeader.setStickyView(label, withHeight: 40.0)
-        
+        /////////////////
+        // TableView設定
+        /////////////////
         self.tableView.dataSource = self
         self.tableView.delegate = self
         let homeNib = UINib(nibName: "HomeCell", bundle: nil)
