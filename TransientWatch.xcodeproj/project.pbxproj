@@ -19,6 +19,7 @@
 		5CB0B9401AD8B0BF005F86B3 /* SVProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB0B93F1AD8B0BF005F86B3 /* SVProgressHUD+Extension.swift */; };
 		5CB0B9431AD8B115005F86B3 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB0B9421AD8B115005F86B3 /* Setting.swift */; };
 		5CB0B9471AD8B22F005F86B3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0B9461AD8B22F005F86B3 /* LaunchScreen.xib */; };
+		84EAC9E31AD8DEC90081900D /* AstroObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC9E21AD8DEC90081900D /* AstroObj.swift */; };
 		C604D968AE83B1ECFAD30EEA /* libPods-TransientWatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4C63CA9625D6083E9AD0F7 /* libPods-TransientWatch.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		5CB0B9421AD8B115005F86B3 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		5CB0B9461AD8B22F005F86B3 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		84A7E4584377198A77148CF7 /* Pods-TransientWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransientWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransientWatch/Pods-TransientWatch.release.xcconfig"; sourceTree = "<group>"; };
+		84EAC9E21AD8DEC90081900D /* AstroObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstroObj.swift; sourceTree = "<group>"; };
 		DDBFE3EEE74B39F3EF6851B8 /* Pods-TransientWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransientWatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransientWatch/Pods-TransientWatch.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				5CB0B9301AD8AF3E005F86B3 /* ChartModel.swift */,
+				84EAC9E21AD8DEC90081900D /* AstroObj.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				5CA982681AD830A6001F299F /* AppDelegate.swift in Sources */,
 				5CB0B9311AD8AF3E005F86B3 /* ChartModel.swift in Sources */,
 				5CB0B9381AD8B047005F86B3 /* HomeViewController.swift in Sources */,
+				84EAC9E31AD8DEC90081900D /* AstroObj.swift in Sources */,
 				5CB0B9361AD8AFD3005F86B3 /* ChartView.swift in Sources */,
 				5CB0B9401AD8B0BF005F86B3 /* SVProgressHUD+Extension.swift in Sources */,
 				5CB0B9431AD8B115005F86B3 /* Setting.swift in Sources */,
