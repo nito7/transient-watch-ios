@@ -42,7 +42,24 @@ class CelestialView: UIView {
         circle.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.4)
         self.addSubview(circle)
         
+        // 天体
+        let button = UIButton(frame: CGRectMake(30, 100, 20, 20))
+        button.backgroundColor = UIColor.redColor()
+        button.alpha = 0.5
+        button.layer.cornerRadius = 10
+        circle.addSubview(button)
         
+        let button2 = UIButton(frame: CGRectMake(200, 200, 20, 20))
+        button2.backgroundColor = UIColor.redColor()
+        button2.alpha = 0.5
+        button2.layer.cornerRadius = 10
+        circle.addSubview(button2)
+        
+        let button3 = UIButton(frame: CGRectMake(150, 130, 20, 20))
+        button3.backgroundColor = UIColor.redColor()
+        button3.alpha = 0.5
+        button3.layer.cornerRadius = 10
+        circle.addSubview(button3)
     }
     
     /*
