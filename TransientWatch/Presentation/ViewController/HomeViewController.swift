@@ -18,6 +18,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Home"
         
         ////////////////////////
         // 13 9 35
