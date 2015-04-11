@@ -39,11 +39,30 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="WV3-Rr-I4R" id="1Se-G6-Pwu"/>
+                        <segue destination="gx5-Qv-Ixc" kind="show" id="teX-by-sJB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="133" y="-24"/>
+        </scene>
+        <!--Chart View Controller-->
+        <scene sceneID="3fA-QH-elY">
+            <objects>
+                <viewController storyboardIdentifier="ChartViewController" id="gx5-Qv-Ixc" customClass="ChartViewController" customModule="TransientWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FuZ-BX-oVp"/>
+                        <viewControllerLayoutGuide type="bottom" id="skm-fM-o03"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WX0-JJ-CuL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cDr-WF-99H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="837" y="-24"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0dM-b1-c5C">
