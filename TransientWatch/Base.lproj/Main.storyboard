@@ -57,8 +57,23 @@
                     <view key="view" contentMode="scaleToFill" id="WX0-JJ-CuL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Uij-Rv-Pe9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Uij-Rv-Pe9" firstAttribute="leading" secondItem="WX0-JJ-CuL" secondAttribute="leading" id="I0Q-S2-WHL"/>
+                            <constraint firstAttribute="centerX" secondItem="Uij-Rv-Pe9" secondAttribute="centerX" id="IC4-Vz-9gg"/>
+                            <constraint firstItem="Uij-Rv-Pe9" firstAttribute="bottom" secondItem="skm-fM-o03" secondAttribute="top" id="Luf-D1-l1E"/>
+                            <constraint firstAttribute="centerY" secondItem="Uij-Rv-Pe9" secondAttribute="centerY" id="OCC-Up-1Ap"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Uij-Rv-Pe9" id="Kga-Ds-Uzq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDr-WF-99H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
