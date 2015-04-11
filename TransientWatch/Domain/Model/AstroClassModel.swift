@@ -15,16 +15,16 @@ class AstroClassModel: NSObject {
             parameters: query,
             success: {(task: NSURLSessionDataTask!, response: AnyObject!) -> Void in
                 var responseArray = response as NSArray
-                var entities = []
-                for data in responseArray {
-                    var id: String        = data["id"] as String
-                    var name: String      = data["id"] as String
-                    var createdAt: String = data["created_at"] as String
-                    var updatedAt: String = data["updated_at"] as String
-                    
-                    var astroClass: AstroClass = AstroClass(id: id, name: name, createdAt: createdAt, updatedAt: updatedAt)
-                    entities.append(astroClass)
-                }
+//                var entities = []
+//                for data in responseArray {
+//                    var id: String        = data["id"] as String
+//                    var name: String      = data["id"] as String
+//                    var createdAt: String = data["created_at"] as String
+//                    var updatedAt: String = data["updated_at"] as String
+//                    
+//                    var astroClass: AstroClass = AstroClass(id: id, name: name, createdAt: createdAt, updatedAt: updatedAt)
+//                    entities.append(astroClass)
+//                }
             },
             failure: {(task: NSURLSessionDataTask!, error: NSError!) -> Void in
                 println(error)
