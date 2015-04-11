@@ -12,11 +12,11 @@ class AstroObj: NSObject {
     
     // MARK: - Property
     
-    var id: String?
+    var id: Int?
     var name: String?
-    var ra: String?
-    var dec: String?
-    var astroClassId: String?
+    var ra: Float?
+    var dec: Float?
+    var astroClassId: Int?
     var link: String?
     
     // MARK: - LifeCycle
@@ -24,11 +24,11 @@ class AstroObj: NSObject {
     init(response: [String: AnyObject?]) {
         super.init()
         
-        let id = response["id"] as? String
+        let id = response["id"] as? Int
         let name = response["name"] as? String
-        let ra = response["ra"] as? String
-        let dec = response["dec"] as? String
-        let astroClassId = response["astro_class_id"] as? String
+        let ra = response["ra"] as? Float
+        let dec = response["dec"] as? Float
+        let astroClassId = response["astro_class_id"] as? Int
         let link = response["link"] as? String
         
         self.id = id

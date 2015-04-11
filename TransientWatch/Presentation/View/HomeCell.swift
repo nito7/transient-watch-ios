@@ -22,9 +22,9 @@ class HomeCell: UITableViewCell {
         didSet {
             if let astro = self.astroObj {
                 self.nameLabel.text = astro.name
-                self.raLabel.text = astro.ra
-                self.decLabel.text = astro.dec
-                self.classLabel.text = astro.astroClassId
+                self.raLabel.text = astro.ra?.description
+                self.decLabel.text = astro.dec?.description
+                self.classLabel.text = astro.astroClassId?.description
                 self.fluxChangeLabel.text = "100%"
             }
         }

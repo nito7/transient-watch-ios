@@ -13,6 +13,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Property
     
     @IBOutlet weak var tableView: UITableView!
+    var astroObjArray: [AstroObj] = []
     
     // MARK: - LifeCycle
     
@@ -60,6 +61,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableView.delegate = self
         let homeNib = UINib(nibName: "HomeCell", bundle: nil)
         self.tableView.registerNib(homeNib, forCellReuseIdentifier: "HomeCell")
+        
+        self.fetchAstroObj()
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,6 +74,22 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBAction func toggleMenu(sender: UIBarButtonItem) {
         self.mm_drawerController.toggleDrawerSide(.Left, animated: true, completion: nil)
+    }
+    
+    func fetchAstroObj() {
+        SVProgressHUD.show()
+        
+        AstroObjModel.GET(
+            success: { (task: NSURLSessionDataTask!, array: Array<AstroObj>!) -> Void in
+                SVProgressHUD.showSuccessWithStatus("load success")
+                
+                self.astroObjArray = array
+                self.tableView.reloadData()
+            },
+            failure: { (task: NSURLSessionDataTask!, error: NSError!) -> Void in
+                SVProgressHUD.showErrorWithStatus("load error")
+            }
+        )
     }
     
     // MARK: - UITableView DataSource & Delegate
@@ -92,7 +111,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.astroObjArray.count
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -111,6 +130,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell") as HomeCell
+        
+        cell.astroObj = self.astroObjArray[indexPath.row]
         return cell
     }
     
