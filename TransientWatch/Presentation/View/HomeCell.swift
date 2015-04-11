@@ -14,7 +14,7 @@ class HomeCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
         self.textLabel?.textColor = UIColor.whiteColor()
     }
 
