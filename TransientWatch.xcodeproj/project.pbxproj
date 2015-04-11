@@ -19,6 +19,8 @@
 		5CB0B9401AD8B0BF005F86B3 /* SVProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB0B93F1AD8B0BF005F86B3 /* SVProgressHUD+Extension.swift */; };
 		5CB0B9431AD8B115005F86B3 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB0B9421AD8B115005F86B3 /* Setting.swift */; };
 		5CB0B9471AD8B22F005F86B3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0B9461AD8B22F005F86B3 /* LaunchScreen.xib */; };
+		5CC6EE9A1AD94A6100E421EB /* CelestialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6EE991AD94A6100E421EB /* CelestialView.swift */; };
+		5CC6EE9E1AD94A8400E421EB /* CelestialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC6EE9D1AD94A8400E421EB /* CelestialView.xib */; };
 		5CFD85561AD9410600BBB6ED /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD85541AD9410600BBB6ED /* HomeCell.swift */; };
 		5CFD85571AD9410600BBB6ED /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CFD85551AD9410600BBB6ED /* HomeCell.xib */; };
 		84EAC9E31AD8DEC90081900D /* AstroObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC9E21AD8DEC90081900D /* AstroObj.swift */; };
@@ -58,6 +60,8 @@
 		5CB0B93F1AD8B0BF005F86B3 /* SVProgressHUD+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SVProgressHUD+Extension.swift"; sourceTree = "<group>"; };
 		5CB0B9421AD8B115005F86B3 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		5CB0B9461AD8B22F005F86B3 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		5CC6EE991AD94A6100E421EB /* CelestialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelestialView.swift; sourceTree = "<group>"; };
+		5CC6EE9D1AD94A8400E421EB /* CelestialView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CelestialView.xib; sourceTree = "<group>"; };
 		5CFD85541AD9410600BBB6ED /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		5CFD85551AD9410600BBB6ED /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		84A7E4584377198A77148CF7 /* Pods-TransientWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransientWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransientWatch/Pods-TransientWatch.release.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				5CB0B9351AD8AFD3005F86B3 /* ChartView.swift */,
+				5CC6EE991AD94A6100E421EB /* CelestialView.swift */,
+				5CC6EE9D1AD94A8400E421EB /* CelestialView.xib */,
 				84EAC9ED1AD924A70081900D /* SettingNotificationCell.swift */,
 				84EAC9EF1AD924C30081900D /* SettingNotificationCell.xib */,
 				5CFD85541AD9410600BBB6ED /* HomeCell.swift */,
@@ -368,6 +374,7 @@
 				5CB0B9471AD8B22F005F86B3 /* LaunchScreen.xib in Resources */,
 				5CA9826F1AD830A6001F299F /* Images.xcassets in Resources */,
 				5CFD85571AD9410600BBB6ED /* HomeCell.xib in Resources */,
+				5CC6EE9E1AD94A8400E421EB /* CelestialView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +434,7 @@
 				5CFD85561AD9410600BBB6ED /* HomeCell.swift in Sources */,
 				5CB0B9311AD8AF3E005F86B3 /* ChartModel.swift in Sources */,
 				5CB0B9381AD8B047005F86B3 /* HomeViewController.swift in Sources */,
+				5CC6EE9A1AD94A6100E421EB /* CelestialView.swift in Sources */,
 				84EAC9E31AD8DEC90081900D /* AstroObj.swift in Sources */,
 				5CB0B9361AD8AFD3005F86B3 /* ChartView.swift in Sources */,
 				5CB0B9401AD8B0BF005F86B3 /* SVProgressHUD+Extension.swift in Sources */,

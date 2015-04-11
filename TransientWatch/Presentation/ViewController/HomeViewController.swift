@@ -28,8 +28,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        let chart = ChartView(frame: frame)
 //        self.view.addSubview(chart)
         
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor.blueColor()
+        let headerView = CelestialView.instance()
+        
+        let textLabel = UILabel(frame: CGRectMake(0, 100, CGRectGetWidth(self.view.frame), 50))
+        textLabel.textAlignment = .Center
+        textLabel.text = "ヘッダー"
+//        headerView.addSubview(textLabel)
         
         let label = UILabel()
         label.backgroundColor = UIColor.redColor()
@@ -96,6 +100,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         scrollView.shouldPositionParallaxHeader()
+        
+        scrollView.parallaxHeader.stickyView.alpha = scrollView.parallaxHeader.progress
     }
 
 }
