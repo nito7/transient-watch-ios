@@ -19,6 +19,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ////////////////////////
+        // 13 9 35
+        // navigation controller
+        ////////////////////////
+        self.navigationController?.navigationBar.barStyle = .Black
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.translucent = true
+        self.navigationController?.navigationBar.setBackgroundImage(
+            UIImage(),
+            forBarMetrics: UIBarMetrics.DefaultPrompt
+        )
+        
         ////////////////
         // 背景画像の設定
         ////////////////
@@ -43,7 +55,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         label.textAlignment = .Center
         label.textColor = UIColor.whiteColor()
         label.text = "セクションヘッダー"
-        self.tableView.setParallaxHeaderView(headerView, mode: VGParallaxHeaderMode.Fill, height: 300)
+        self.tableView.setParallaxHeaderView(headerView, mode: VGParallaxHeaderMode.TopFill, height: 300)
         self.tableView.parallaxHeader.stickyViewPosition = .Bottom
         self.tableView.parallaxHeader.setStickyView(label, withHeight: 50.0)
         
