@@ -52,7 +52,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         ////////////////
 //        let headerView = CelestialView.instance()
         let headerView = CelestialView(frame: CGRectMake(0, 0, self.view.frame.size.width - 20, 300))
-        self.tableView.setParallaxHeaderView(headerView, mode: VGParallaxHeaderMode.TopFill, height: 300)
+        self.tableView.setParallaxHeaderView(headerView, mode: VGParallaxHeaderMode.Top, height: 300)
         
         /////////////////
         // TableView設定
