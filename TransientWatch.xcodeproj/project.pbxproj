@@ -216,8 +216,12 @@
 			isa = PBXGroup;
 			children = (
 				5CB0B9351AD8AFD3005F86B3 /* ChartView.swift */,
+				5CC6EE991AD94A6100E421EB /* CelestialView.swift */,
+				5CC6EE9D1AD94A8400E421EB /* CelestialView.xib */,
 				84EAC9ED1AD924A70081900D /* SettingNotificationCell.swift */,
 				84EAC9EF1AD924C30081900D /* SettingNotificationCell.xib */,
+				5CFD85541AD9410600BBB6ED /* HomeCell.swift */,
+				5CFD85551AD9410600BBB6ED /* HomeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -367,6 +371,8 @@
 				84EAC9F01AD924C30081900D /* SettingNotificationCell.xib in Resources */,
 				5CB0B9471AD8B22F005F86B3 /* LaunchScreen.xib in Resources */,
 				5CA9826F1AD830A6001F299F /* Images.xcassets in Resources */,
+				5CFD85571AD9410600BBB6ED /* HomeCell.xib in Resources */,
+				5CC6EE9E1AD94A8400E421EB /* CelestialView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
