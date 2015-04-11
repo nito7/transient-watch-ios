@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeViewController = storyBoard.instantiateViewControllerWithIdentifier("HomeViewController") as HomeViewController
         let navigation         = UINavigationController(rootViewController: homeViewController)
         let menuViewController = storyBoard.instantiateViewControllerWithIdentifier("MenuViewController") as MenuViewController
+        menuViewController.homeController = homeViewController
         
         let drawer             = MMDrawerController(centerViewController: navigation, leftDrawerViewController: menuViewController)
         drawer.maximumLeftDrawerWidth     = 260

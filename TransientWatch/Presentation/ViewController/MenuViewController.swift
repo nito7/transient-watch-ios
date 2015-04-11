@@ -16,6 +16,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         ["name": "Home", "value": 0],
         ["name": "通知設定", "value": 1]
     ]
+    
+    var homeController: HomeViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +51,11 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if self.menuList[indexPath.row]["value"]! == 1 {
+            self.mm_drawerController.closeDrawerAnimated(false, completion: nil)
+            self.homeController!.toSettingNotification()
+        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
