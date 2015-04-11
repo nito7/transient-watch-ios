@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.5.2):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - CorePlot (99.99.99)
   - MMDrawerController (0.5.7):
     - MMDrawerController/Core (= 0.5.7)
     - MMDrawerController/MMDrawerBarButtonItem (= 0.5.7)
@@ -42,13 +43,25 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - CorePlot (from `https://github.com/core-plot/core-plot.git`, branch `release-2.0`)
   - MMDrawerController (~> 0.5.7)
-  - PNChart (= 0.8)
+  - PNChart
   - SDWebImage (~> 3.6)
   - SVProgressHUD
 
+EXTERNAL SOURCES:
+  CorePlot:
+    :branch: release-2.0
+    :git: https://github.com/core-plot/core-plot.git
+
+CHECKOUT OPTIONS:
+  CorePlot:
+    :commit: abfa6e11f8944629904a2d072b496489a7ed5a84
+    :git: https://github.com/core-plot/core-plot.git
+
 SPEC CHECKSUMS:
   AFNetworking: fefbce9660acb17f48ae0011292d4da0f457bf36
+  CorePlot: ec8629b3be3aa88795e2cadda163a0fcfc967925
   MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
   PNChart: d62a59b248e890ea688252a03a276f9805244148
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29

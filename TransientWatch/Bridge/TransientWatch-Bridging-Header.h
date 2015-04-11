@@ -6,3 +6,4 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <PNChart/PNChart.h>
 #import <MMDrawerController/UIViewController+MMDrawerController.h>
+#import <CorePlot-CocoaTouch.h>

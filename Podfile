@@ -6,7 +6,8 @@ pod 'AFNetworking', '~> 2.0'
 pod 'SVProgressHUD'
 pod 'SDWebImage', '~> 3.6'
 pod 'MMDrawerController', '~> 0.5.7'
-pod 'PNChart', '0.8'
+pod 'PNChart'
+pod 'CorePlot', :git => 'https://github.com/core-plot/core-plot.git', :branch => 'release-2.0'
 end
 
 target 'TransientWatchTests' do
