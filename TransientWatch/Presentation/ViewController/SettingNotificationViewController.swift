@@ -10,7 +10,8 @@ import UIKit
 
 class SettingNotificationViewController: UIViewController {
 
-    @IBOutlet var SettingNotificationTableView: UITableView!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,8 @@ class SettingNotificationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func openMenu(sender: UIBarButtonItem) {
+    
+    @IBAction func pressMenuButton(sender: AnyObject) {
         self.mm_drawerController.toggleDrawerSide(.Left, animated: true, completion: nil)
     }
 
