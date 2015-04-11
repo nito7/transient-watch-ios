@@ -69,19 +69,19 @@ class ChartView: UIView, CPTPlotDataSource, CPTPlotSpaceDelegate {
         }
         
         let hostingView = CPTGraphHostingView(frame: frame)
+        hostingView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.4)
         self.addSubview(hostingView)
         
         let graph = CPTXYGraph(frame: frame)
         hostingView.hostedGraph = graph
         
-        graph.title = "グラフ"
         graph.paddingLeft = 10
         graph.paddingTop = 10
         graph.paddingRight = 10
         graph.paddingBottom = 10
         
-        graph.plotAreaFrame.paddingLeft   = 40.0
-        graph.plotAreaFrame.paddingTop    = 0
+        graph.plotAreaFrame.paddingLeft   = 35.0
+        graph.plotAreaFrame.paddingTop    = 10.0
         graph.plotAreaFrame.paddingRight  = 20.0
         graph.plotAreaFrame.paddingBottom = 30.0
         

@@ -8,7 +8,9 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource,
+                                            UITableViewDelegate,
+                                            CelestialViewDelegate {
     
     // MARK: - Property
     
@@ -42,16 +44,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let imageView = UIImageView(image: backGroundImage)
         imageView.frame = self.view.bounds
         self.navigationController?.view.insertSubview(imageView, atIndex: 0)
-        
-//        let frame = CGRectMake(0, 50, CGRectGetWidth(self.view.frame), 450)
-//        let chart = ChartView(frame: frame)
-//        self.view.addSubview(chart)
-        
+                
         ////////////////
         // ヘッダー設定
         ////////////////
 //        let headerView = CelestialView.instance()
         let headerView = CelestialView(frame: CGRectMake(0, 0, self.view.frame.size.width - 20, 300))
+        headerView.delegate = self
         self.tableView.setParallaxHeaderView(headerView, mode: VGParallaxHeaderMode.Top, height: 300)
         
         /////////////////
@@ -73,7 +72,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Private
     
     @IBAction func toggleMenu(sender: UIBarButtonItem) {
-        self.mm_drawerController.toggleDrawerSide(.Left, animated: true, completion: nil)
+        self.mm_drawerController.toggleDrawerSide(
+            .Left,
+            animated: true,
+            completion: nil
+        )
     }
     
     func fetchAstroObj() {
@@ -90,6 +93,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 SVProgressHUD.showErrorWithStatus("load error")
             }
         )
+    }
+    
+    func pushChartViewController(#id: String) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let chartViewController = storyboard.instantiateViewControllerWithIdentifier("ChartViewController") as ChartViewController
+        self.navigationController?.pushViewController(chartViewController, animated: true)
     }
     
     // MARK: - UITableView DataSource & Delegate
@@ -135,10 +145,22 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        self.pushChartViewController(id: indexPath.row.description)
+    }
+    
     // MARK: - UIScrollViewDelegate
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         scrollView.shouldPositionParallaxHeader()
     }
-
+    
+    // MARK: - CelestialViewDelegate
+    
+    func didPressAstroObj() {
+        self.pushChartViewController(id: "")
+    }
+    
 }

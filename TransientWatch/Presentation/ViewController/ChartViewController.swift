@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ChartViewController: UIViewController {
+class ChartViewController: UIViewController, UITableViewDataSource,
+                                             UITableViewDelegate {
     
     // MARK: - Property
     
@@ -18,8 +19,31 @@ class ChartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.title = "Chart"
+        
+        self.navigationController?.navigationBar.barStyle = .Black
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.translucent = true
+        self.navigationController?.navigationBar.setBackgroundImage(
+            UIImage(),
+            forBarMetrics: UIBarMetrics.DefaultPrompt
+        )
+        
+        self.view.backgroundColor = UIColor.clearColor()
+        self.tableView.backgroundColor = UIColor.clearColor()
+        let backGroundImage = UIImage(named: "BackGround")
+        let imageView = UIImageView(image: backGroundImage)
+        imageView.frame = self.view.bounds
+        self.navigationController?.view.insertSubview(imageView, atIndex: 0)
+        
+        let frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 300)
+        let chart = ChartView(frame: frame)
+        self.tableView.setParallaxHeaderView(chart, mode: VGParallaxHeaderMode.TopFill, height: 300)
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        let homeNib = UINib(nibName: "HomeCell", bundle: nil)
+        self.tableView.registerNib(homeNib, forCellReuseIdentifier: "HomeCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,6 +63,50 @@ class ChartViewController: UIViewController {
     
     // MARK: - Private
     
+    // MARK: - UITableView DataSource & Delegate
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
     
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Other"
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 70
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if cell.respondsToSelector(Selector("setSeparatorInset:")) {
+            cell.separatorInset = UIEdgeInsetsZero
+        }
+        
+        if cell.respondsToSelector(Selector("setPreservesSuperviewLayoutMargins:")) {
+            cell.preservesSuperviewLayoutMargins = false
+        }
+        
+        if cell.respondsToSelector(Selector("setLayoutMargins:")) {
+            cell.layoutMargins = UIEdgeInsetsZero
+        }
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell") as HomeCell
+        return cell
+    }
+    
+    // MARK: - UIScrollViewDelegate
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        scrollView.shouldPositionParallaxHeader()
+    }
 }
