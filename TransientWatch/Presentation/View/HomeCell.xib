@@ -71,6 +71,13 @@
                     <constraint firstItem="LMQ-4L-bKM" firstAttribute="baseline" secondItem="bRm-rV-PPs" secondAttribute="baseline" id="tTH-Yf-L7Q"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="classLabel" destination="Btf-hc-1NV" id="JE5-kG-e63"/>
+                <outlet property="decLabel" destination="1Gh-xk-jig" id="fhx-TK-yMG"/>
+                <outlet property="fluxChangeLabel" destination="c4z-SJ-0IG" id="QjJ-8f-vrj"/>
+                <outlet property="nameLabel" destination="bRm-rV-PPs" id="qtI-sh-etK"/>
+                <outlet property="raLabel" destination="LMQ-4L-bKM" id="jac-a4-sdS"/>
+            </connections>
             <point key="canvasLocation" x="408" y="345"/>
         </tableViewCell>
     </objects>
