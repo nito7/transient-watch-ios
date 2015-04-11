@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.5.2):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - CorePlot (1.5.1)
   - MMDrawerController (0.5.7):
     - MMDrawerController/Core (= 0.5.7)
     - MMDrawerController/MMDrawerBarButtonItem (= 0.5.7)
@@ -42,6 +43,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - CorePlot
   - MMDrawerController (~> 0.5.7)
   - PNChart (= 0.8)
   - SDWebImage (~> 3.6)
@@ -49,6 +51,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: fefbce9660acb17f48ae0011292d4da0f457bf36
+  CorePlot: 53d823a4de5e4e662311cae4cdcb230e146c5c90
   MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
   PNChart: d62a59b248e890ea688252a03a276f9805244148
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29

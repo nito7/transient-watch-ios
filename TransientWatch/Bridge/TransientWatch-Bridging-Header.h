@@ -5,3 +5,4 @@
 #import <AFNetworking/AFNetworking.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <PNChart/PNChart.h>
+#import <CorePlot/CorePlot.h>

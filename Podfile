@@ -7,6 +7,7 @@ pod 'SVProgressHUD'
 pod 'SDWebImage', '~> 3.6'
 pod 'MMDrawerController', '~> 0.5.7'
 pod 'PNChart', '0.8'
+pod 'CorePlot'
 end
 
 target 'TransientWatchTests' do
