@@ -22,6 +22,8 @@
 		84EAC9E31AD8DEC90081900D /* AstroObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC9E21AD8DEC90081900D /* AstroObj.swift */; };
 		84EAC9EA1AD90D110081900D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC9E91AD90D110081900D /* MenuViewController.swift */; };
 		84EAC9EC1AD90D3F0081900D /* SettingNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC9EB1AD90D3F0081900D /* SettingNotificationViewController.swift */; };
+		84EAC9EE1AD924A70081900D /* SettingNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC9ED1AD924A70081900D /* SettingNotificationCell.swift */; };
+		84EAC9F01AD924C30081900D /* SettingNotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EAC9EF1AD924C30081900D /* SettingNotificationCell.xib */; };
 		C604D968AE83B1ECFAD30EEA /* libPods-TransientWatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4C63CA9625D6083E9AD0F7 /* libPods-TransientWatch.a */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		84EAC9E21AD8DEC90081900D /* AstroObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstroObj.swift; sourceTree = "<group>"; };
 		84EAC9E91AD90D110081900D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		84EAC9EB1AD90D3F0081900D /* SettingNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingNotificationViewController.swift; sourceTree = "<group>"; };
+		84EAC9ED1AD924A70081900D /* SettingNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingNotificationCell.swift; sourceTree = "<group>"; };
+		84EAC9EF1AD924C30081900D /* SettingNotificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingNotificationCell.xib; sourceTree = "<group>"; };
 		DDBFE3EEE74B39F3EF6851B8 /* Pods-TransientWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransientWatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransientWatch/Pods-TransientWatch.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				5CB0B9351AD8AFD3005F86B3 /* ChartView.swift */,
+				84EAC9ED1AD924A70081900D /* SettingNotificationCell.swift */,
+				84EAC9EF1AD924C30081900D /* SettingNotificationCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -352,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CA9826D1AD830A6001F299F /* Main.storyboard in Resources */,
+				84EAC9F01AD924C30081900D /* SettingNotificationCell.xib in Resources */,
 				5CB0B9471AD8B22F005F86B3 /* LaunchScreen.xib in Resources */,
 				5CA9826F1AD830A6001F299F /* Images.xcassets in Resources */,
 			);
@@ -409,6 +416,7 @@
 				5CB0B92A1AD8AECA005F86B3 /* API.swift in Sources */,
 				84EAC9EC1AD90D3F0081900D /* SettingNotificationViewController.swift in Sources */,
 				5CA982681AD830A6001F299F /* AppDelegate.swift in Sources */,
+				84EAC9EE1AD924A70081900D /* SettingNotificationCell.swift in Sources */,
 				5CB0B9311AD8AF3E005F86B3 /* ChartModel.swift in Sources */,
 				5CB0B9381AD8B047005F86B3 /* HomeViewController.swift in Sources */,
 				84EAC9E31AD8DEC90081900D /* AstroObj.swift in Sources */,

@@ -87,11 +87,5 @@ class HomeViewController: UIViewController, PNChartDelegate {
     @IBAction func toggleMenu(sender: UIBarButtonItem) {
         self.mm_drawerController.toggleDrawerSide(.Left, animated: true, completion: nil)
     }
-    
-    func toSettingNotification () {
-        let storyBoard     = UIStoryboard(name: "Main", bundle: nil)
-        var nextController = storyBoard.instantiateViewControllerWithIdentifier("SettingNotificationViewController") as SettingNotificationViewController
-        self.navigationController?.pushViewController(nextController, animated: true)
-    }
 
 }

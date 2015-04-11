@@ -17,8 +17,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         ["name": "通知設定", "value": 1]
     ]
     
-    var homeController: HomeViewController?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -52,9 +50,17 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if self.menuList[indexPath.row]["value"]! == 1 {
-            self.mm_drawerController.closeDrawerAnimated(false, completion: nil)
-            self.homeController!.toSettingNotification()
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+
+        
+        if self.menuList[indexPath.row]["value"]! == 0 {
+            var nextController = storyBoard.instantiateViewControllerWithIdentifier("HomeViewController") as HomeViewController
+            let navigation     = UINavigationController(rootViewController: nextController)
+            self.mm_drawerController.setCenterViewController(navigation, withCloseAnimation: true, completion: nil)
+        } else if self.menuList[indexPath.row]["value"]! == 1 {
+            var nextController = storyBoard.instantiateViewControllerWithIdentifier("SettingNotificationViewController") as SettingNotificationViewController
+            let navigation     = UINavigationController(rootViewController: nextController)
+            self.mm_drawerController.setCenterViewController(navigation, withCloseAnimation: true, completion: nil)
         }
     }
     
