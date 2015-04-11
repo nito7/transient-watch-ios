@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C6477391AD9869900388713 /* AstroObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6477381AD9869900388713 /* AstroObj.swift */; };
+		5C64773B1AD9892400388713 /* AstroObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C64773A1AD9892400388713 /* AstroObjModel.swift */; };
 		5CA982681AD830A6001F299F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA982671AD830A6001F299F /* AppDelegate.swift */; };
 		5CA9826D1AD830A6001F299F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CA9826B1AD830A6001F299F /* Main.storyboard */; };
 		5CA9826F1AD830A6001F299F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CA9826E1AD830A6001F299F /* Images.xcassets */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		2B4C63CA9625D6083E9AD0F7 /* libPods-TransientWatch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TransientWatch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6477381AD9869900388713 /* AstroObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstroObj.swift; sourceTree = "<group>"; };
+		5C64773A1AD9892400388713 /* AstroObjModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstroObjModel.swift; sourceTree = "<group>"; };
 		5CA982621AD830A6001F299F /* TransientWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransientWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA982661AD830A6001F299F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CA982671AD830A6001F299F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				5CB0B9301AD8AF3E005F86B3 /* ChartModel.swift */,
 				84EAC9F11AD9405A0081900D /* AstroClassModel.swift */,
 				5CC680891AD97CD60008F65E /* WatchModel.swift */,
+				5C64773A1AD9892400388713 /* AstroObjModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				84EAC9EC1AD90D3F0081900D /* SettingNotificationViewController.swift in Sources */,
 				5CA982681AD830A6001F299F /* AppDelegate.swift in Sources */,
 				84EAC9EE1AD924A70081900D /* SettingNotificationCell.swift in Sources */,
+				5C64773B1AD9892400388713 /* AstroObjModel.swift in Sources */,
 				845F15BF1AD94EB7005BEF59 /* AstroClass.swift in Sources */,
 				5CFD85561AD9410600BBB6ED /* HomeCell.swift in Sources */,
 				5CB0B9311AD8AF3E005F86B3 /* ChartModel.swift in Sources */,
