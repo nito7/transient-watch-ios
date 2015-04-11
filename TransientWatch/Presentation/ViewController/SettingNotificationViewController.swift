@@ -10,10 +10,20 @@ import UIKit
 
 class SettingNotificationViewController: UIViewController {
 
+    @IBOutlet var SettingNotificationTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        AstroClassModel.index(["": ""],
+            success: {(res: NSArray!) -> Void in
+                
+            },
+            failure: {(error: NSError!) -> Void in
+                
+            }
+        )
     }
 
     override func didReceiveMemoryWarning() {

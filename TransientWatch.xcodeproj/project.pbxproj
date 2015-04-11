@@ -19,11 +19,13 @@
 		5CB0B9401AD8B0BF005F86B3 /* SVProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB0B93F1AD8B0BF005F86B3 /* SVProgressHUD+Extension.swift */; };
 		5CB0B9431AD8B115005F86B3 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB0B9421AD8B115005F86B3 /* Setting.swift */; };
 		5CB0B9471AD8B22F005F86B3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0B9461AD8B22F005F86B3 /* LaunchScreen.xib */; };
-		84EAC9E31AD8DEC90081900D /* AstroObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC9E21AD8DEC90081900D /* AstroObj.swift */; };
+		845F15BF1AD94EB7005BEF59 /* AstroClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F15BE1AD94EB7005BEF59 /* AstroClass.swift */; };
+		84EAC9E31AD8DEC90081900D /* WatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC9E21AD8DEC90081900D /* WatchModel.swift */; };
 		84EAC9EA1AD90D110081900D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC9E91AD90D110081900D /* MenuViewController.swift */; };
 		84EAC9EC1AD90D3F0081900D /* SettingNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC9EB1AD90D3F0081900D /* SettingNotificationViewController.swift */; };
 		84EAC9EE1AD924A70081900D /* SettingNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC9ED1AD924A70081900D /* SettingNotificationCell.swift */; };
 		84EAC9F01AD924C30081900D /* SettingNotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EAC9EF1AD924C30081900D /* SettingNotificationCell.xib */; };
+		84EAC9F21AD9405A0081900D /* AstroClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC9F11AD9405A0081900D /* AstroClassModel.swift */; };
 		C604D968AE83B1ECFAD30EEA /* libPods-TransientWatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4C63CA9625D6083E9AD0F7 /* libPods-TransientWatch.a */; };
 /* End PBXBuildFile section */
 
@@ -56,12 +58,14 @@
 		5CB0B93F1AD8B0BF005F86B3 /* SVProgressHUD+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SVProgressHUD+Extension.swift"; sourceTree = "<group>"; };
 		5CB0B9421AD8B115005F86B3 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		5CB0B9461AD8B22F005F86B3 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		845F15BE1AD94EB7005BEF59 /* AstroClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstroClass.swift; sourceTree = "<group>"; };
 		84A7E4584377198A77148CF7 /* Pods-TransientWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransientWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransientWatch/Pods-TransientWatch.release.xcconfig"; sourceTree = "<group>"; };
-		84EAC9E21AD8DEC90081900D /* AstroObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstroObj.swift; sourceTree = "<group>"; };
+		84EAC9E21AD8DEC90081900D /* WatchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchModel.swift; sourceTree = "<group>"; };
 		84EAC9E91AD90D110081900D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		84EAC9EB1AD90D3F0081900D /* SettingNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingNotificationViewController.swift; sourceTree = "<group>"; };
 		84EAC9ED1AD924A70081900D /* SettingNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingNotificationCell.swift; sourceTree = "<group>"; };
 		84EAC9EF1AD924C30081900D /* SettingNotificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingNotificationCell.xib; sourceTree = "<group>"; };
+		84EAC9F11AD9405A0081900D /* AstroClassModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstroClassModel.swift; sourceTree = "<group>"; };
 		DDBFE3EEE74B39F3EF6851B8 /* Pods-TransientWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransientWatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransientWatch/Pods-TransientWatch.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				5CB0B92E1AD8AF2D005F86B3 /* Chart.swift */,
+				845F15BE1AD94EB7005BEF59 /* AstroClass.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -192,7 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				5CB0B9301AD8AF3E005F86B3 /* ChartModel.swift */,
-				84EAC9E21AD8DEC90081900D /* AstroObj.swift */,
+				84EAC9E21AD8DEC90081900D /* WatchModel.swift */,
+				84EAC9F11AD9405A0081900D /* AstroClassModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -417,12 +423,14 @@
 				84EAC9EC1AD90D3F0081900D /* SettingNotificationViewController.swift in Sources */,
 				5CA982681AD830A6001F299F /* AppDelegate.swift in Sources */,
 				84EAC9EE1AD924A70081900D /* SettingNotificationCell.swift in Sources */,
+				845F15BF1AD94EB7005BEF59 /* AstroClass.swift in Sources */,
 				5CB0B9311AD8AF3E005F86B3 /* ChartModel.swift in Sources */,
 				5CB0B9381AD8B047005F86B3 /* HomeViewController.swift in Sources */,
-				84EAC9E31AD8DEC90081900D /* AstroObj.swift in Sources */,
+				84EAC9E31AD8DEC90081900D /* WatchModel.swift in Sources */,
 				5CB0B9361AD8AFD3005F86B3 /* ChartView.swift in Sources */,
 				5CB0B9401AD8B0BF005F86B3 /* SVProgressHUD+Extension.swift in Sources */,
 				5CB0B9431AD8B115005F86B3 /* Setting.swift in Sources */,
+				84EAC9F21AD9405A0081900D /* AstroClassModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
