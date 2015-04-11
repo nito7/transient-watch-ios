@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C6477391AD9869900388713 /* AstroObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6477381AD9869900388713 /* AstroObj.swift */; };
 		5CA982681AD830A6001F299F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA982671AD830A6001F299F /* AppDelegate.swift */; };
 		5CA9826D1AD830A6001F299F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CA9826B1AD830A6001F299F /* Main.storyboard */; };
 		5CA9826F1AD830A6001F299F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CA9826E1AD830A6001F299F /* Images.xcassets */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		2B4C63CA9625D6083E9AD0F7 /* libPods-TransientWatch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TransientWatch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C6477381AD9869900388713 /* AstroObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstroObj.swift; sourceTree = "<group>"; };
 		5CA982621AD830A6001F299F /* TransientWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransientWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA982661AD830A6001F299F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CA982671AD830A6001F299F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			children = (
 				5CB0B92E1AD8AF2D005F86B3 /* Chart.swift */,
 				845F15BE1AD94EB7005BEF59 /* AstroClass.swift */,
+				5C6477381AD9869900388713 /* AstroObj.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				5CB0B9401AD8B0BF005F86B3 /* SVProgressHUD+Extension.swift in Sources */,
 				5CB0B9431AD8B115005F86B3 /* Setting.swift in Sources */,
 				84EAC9F21AD9405A0081900D /* AstroClassModel.swift in Sources */,
+				5C6477391AD9869900388713 /* AstroObj.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
