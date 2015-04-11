@@ -9,5 +9,14 @@
 import UIKit
 
 class API: AFHTTPSessionManager {
-   
+    
+    // MARK: - Singleton
+    
+    class var sharedInstance: API {
+        struct Static {
+            static let instance: API = API()
+        }
+        
+        return Static.instance
+    }
 }
