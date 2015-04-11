@@ -84,5 +84,8 @@ class HomeViewController: UIViewController, PNChartDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func toggleMenu(sender: UIBarButtonItem) {
+        self.mm_drawerController.toggleDrawerSide(.Left, animated: true, completion: nil)
+    }
 
 }

@@ -16,7 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        self.window?.rootViewController = self.setUpDrawer()
+        
         return true
+    }
+    
+    func setUpDrawer() -> MMDrawerController {
+        let storyBoard         = UIStoryboard(name: "Main", bundle: nil)
+        
+        let homeViewController = storyBoard.instantiateViewControllerWithIdentifier("HomeViewController") as HomeViewController
+        let navigation         = UINavigationController(rootViewController: homeViewController)
+        let menuViewController = storyBoard.instantiateViewControllerWithIdentifier("MenuViewController") as MenuViewController
+        
+        let drawer             = MMDrawerController(centerViewController: navigation, leftDrawerViewController: menuViewController)
+        drawer.maximumLeftDrawerWidth     = 260
+        drawer.closeDrawerGestureModeMask = .All
+        
+        return drawer
     }
 
     func applicationWillResignActive(application: UIApplication) {
