@@ -18,32 +18,39 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.view.backgroundColor = UIColor.clearColor()
+        self.tableView.backgroundColor = UIColor.clearColor()
+        
         // Do any additional setup after loading the view.
         
 //        let frame = CGRectMake(0, 50, CGRectGetWidth(self.view.frame), 450)
 //        let chart = ChartView(frame: frame)
 //        self.view.addSubview(chart)
         
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.blueColor()
+        
+        let label = UILabel()
+        label.backgroundColor = UIColor.redColor()
+        label.textAlignment = .Center
+        label.text = "パララックスへっだー"
+        
+        self.tableView.setParallaxHeaderView(headerView, mode: VGParallaxHeaderMode.TopFill, height: 300)
+        
+        self.tableView.parallaxHeader.stickyViewPosition = VGParallaxHeaderStickyViewPosition.Bottom
+        self.tableView.parallaxHeader.setStickyView(label, withHeight: 40.0)
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "HomeCell")
+        let homeNib = UINib(nibName: "HomeCell", bundle: nil)
+        self.tableView.registerNib(homeNib, forCellReuseIdentifier: "HomeCell")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     // MARK: - Private
     
@@ -65,12 +72,30 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return 10
     }
     
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if cell.respondsToSelector(Selector("setSeparatorInset:")) {
+            cell.separatorInset = UIEdgeInsetsZero
+        }
+        
+        if cell.respondsToSelector(Selector("setPreservesSuperviewLayoutMargins:")) {
+            cell.preservesSuperviewLayoutMargins = false
+        }
+        
+        if cell.respondsToSelector(Selector("setLayoutMargins:")) {
+            cell.layoutMargins = UIEdgeInsetsZero
+        }
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell") as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell") as HomeCell
         cell.textLabel?.text = "Test"
         return cell
     }
     
+    // MARK: - UIScrollViewDelegate
     
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        scrollView.shouldPositionParallaxHeader()
+    }
 
 }

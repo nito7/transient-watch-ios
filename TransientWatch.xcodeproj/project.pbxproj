@@ -19,6 +19,8 @@
 		5CB0B9401AD8B0BF005F86B3 /* SVProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB0B93F1AD8B0BF005F86B3 /* SVProgressHUD+Extension.swift */; };
 		5CB0B9431AD8B115005F86B3 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB0B9421AD8B115005F86B3 /* Setting.swift */; };
 		5CB0B9471AD8B22F005F86B3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0B9461AD8B22F005F86B3 /* LaunchScreen.xib */; };
+		5CFD85561AD9410600BBB6ED /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD85541AD9410600BBB6ED /* HomeCell.swift */; };
+		5CFD85571AD9410600BBB6ED /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CFD85551AD9410600BBB6ED /* HomeCell.xib */; };
 		84EAC9E31AD8DEC90081900D /* AstroObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC9E21AD8DEC90081900D /* AstroObj.swift */; };
 		84EAC9EA1AD90D110081900D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC9E91AD90D110081900D /* MenuViewController.swift */; };
 		84EAC9EC1AD90D3F0081900D /* SettingNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC9EB1AD90D3F0081900D /* SettingNotificationViewController.swift */; };
@@ -56,6 +58,8 @@
 		5CB0B93F1AD8B0BF005F86B3 /* SVProgressHUD+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SVProgressHUD+Extension.swift"; sourceTree = "<group>"; };
 		5CB0B9421AD8B115005F86B3 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		5CB0B9461AD8B22F005F86B3 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		5CFD85541AD9410600BBB6ED /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		5CFD85551AD9410600BBB6ED /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		84A7E4584377198A77148CF7 /* Pods-TransientWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransientWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransientWatch/Pods-TransientWatch.release.xcconfig"; sourceTree = "<group>"; };
 		84EAC9E21AD8DEC90081900D /* AstroObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstroObj.swift; sourceTree = "<group>"; };
 		84EAC9E91AD90D110081900D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				5CB0B9351AD8AFD3005F86B3 /* ChartView.swift */,
 				84EAC9ED1AD924A70081900D /* SettingNotificationCell.swift */,
 				84EAC9EF1AD924C30081900D /* SettingNotificationCell.xib */,
+				5CFD85541AD9410600BBB6ED /* HomeCell.swift */,
+				5CFD85551AD9410600BBB6ED /* HomeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 				84EAC9F01AD924C30081900D /* SettingNotificationCell.xib in Resources */,
 				5CB0B9471AD8B22F005F86B3 /* LaunchScreen.xib in Resources */,
 				5CA9826F1AD830A6001F299F /* Images.xcassets in Resources */,
+				5CFD85571AD9410600BBB6ED /* HomeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +424,7 @@
 				84EAC9EC1AD90D3F0081900D /* SettingNotificationViewController.swift in Sources */,
 				5CA982681AD830A6001F299F /* AppDelegate.swift in Sources */,
 				84EAC9EE1AD924A70081900D /* SettingNotificationCell.swift in Sources */,
+				5CFD85561AD9410600BBB6ED /* HomeCell.swift in Sources */,
 				5CB0B9311AD8AF3E005F86B3 /* ChartModel.swift in Sources */,
 				5CB0B9381AD8B047005F86B3 /* HomeViewController.swift in Sources */,
 				84EAC9E31AD8DEC90081900D /* AstroObj.swift in Sources */,
