@@ -9,6 +9,7 @@ pod 'MMDrawerController', '~> 0.5.7'
 pod 'PNChart'
 pod 'CorePlot', :git => 'https://github.com/core-plot/core-plot.git', :branch => 'release-2.0'
 pod 'VGParallaxHeader'
+pod 'NJKWebViewProgress'
 end
 
 target 'TransientWatchTests' do

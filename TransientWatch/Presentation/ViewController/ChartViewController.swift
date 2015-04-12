@@ -155,6 +155,7 @@ class ChartViewController: UIViewController, UITableViewDataSource,
         else if indexPath.row == 5 {
             cell.sectionLabel.text = "Date URL:"
             cell.valueLabel.text = astroObj?.link
+            cell.accessoryType = .DisclosureIndicator
         }
         
         return cell
