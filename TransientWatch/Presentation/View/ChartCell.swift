@@ -9,7 +9,14 @@
 import UIKit
 
 class ChartCell: UITableViewCell {
-
+    
+    // MARK: - Property
+    
+    @IBOutlet weak var sectionLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
+    
+    // MARK: - LifeCycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
