@@ -41,7 +41,8 @@ class ChartViewController: UIViewController, UITableViewDataSource,
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        let nib = UINib(nibName: "ChartCell", bundle: nil)
+        self.tableView.registerNib(nib, forCellReuseIdentifier: "Chart")
         
         let frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 300)
         self.chartView = ChartView(frame: frame)
@@ -129,27 +130,31 @@ class ChartViewController: UIViewController, UITableViewDataSource,
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
-        cell.backgroundColor = UIColor.clearColor()
+        let cell = tableView.dequeueReusableCellWithIdentifier("Chart") as ChartCell
         cell.textLabel?.textColor = UIColor.whiteColor()
         
         if indexPath.row == 0 {
             cell.textLabel?.text = astroObj?.name
         }
         else if indexPath.row == 1 {
-            cell.textLabel?.text = "Ra: \(astroObj?.ra)"
+            cell.sectionLabel.text = "Ra:"
+            cell.valueLabel.text = astroObj?.ra?.description
         }
         else if indexPath.row == 2 {
-            cell.textLabel?.text = "Dec: \(astroObj?.dec)"
+            cell.sectionLabel.text = "Dec:"
+            cell.valueLabel.text = astroObj?.dec?.description
         }
         else if indexPath.row == 3 {
-            cell.textLabel?.text = "Class: \(astroObj?.astroClassId)"
+            cell.sectionLabel.text = "Class:"
+            cell.valueLabel.text = astroObj?.astroClassId?.description
         }
         else if indexPath.row == 4 {
-            cell.textLabel?.text = "Flux Chane: 100%"
+            cell.sectionLabel.text = "Flux Chane:"
+            cell.valueLabel.text = "100%"
         }
         else if indexPath.row == 5 {
-            cell.textLabel?.text = "Date URL: \(astroObj?.link)"
+            cell.sectionLabel.text = "Date URL:"
+            cell.valueLabel.text = astroObj?.link
         }
         
         return cell

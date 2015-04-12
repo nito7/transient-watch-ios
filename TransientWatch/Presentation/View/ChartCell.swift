@@ -20,6 +20,7 @@ class ChartCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
