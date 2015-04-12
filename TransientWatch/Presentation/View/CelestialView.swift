@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol CelestialViewDelegate {
+    func didPressAstroObj()
+}
+
 class CelestialView: UIView {
     
     // MARK: - Property
+    
+    var delegate: CelestialViewDelegate?
     
     class func instance() -> CelestialView {
         return UINib(nibName: "CelestialView", bundle: nil).instantiateWithOwner(self, options: nil).first as CelestialView
@@ -43,16 +49,21 @@ class CelestialView: UIView {
         self.addSubview(circle)
         
         // 天体
-        let button = UIButton(frame: CGRectMake(30, 100, 20, 20))
+        let button = UIButton(frame: CGRectMake(30, 100, 30, 30))
         button.backgroundColor = UIColor.redColor()
         button.alpha = 0.5
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 15
         circle.addSubview(button)
+        button.addTarget(
+            self, 
+            action: "pressButton",
+            forControlEvents: UIControlEvents.TouchUpInside
+        )
         
-        let button2 = UIButton(frame: CGRectMake(200, 200, 20, 20))
+        let button2 = UIButton(frame: CGRectMake(200, 200, 30, 30))
         button2.backgroundColor = UIColor.redColor()
         button2.alpha = 0.5
-        button2.layer.cornerRadius = 10
+        button2.layer.cornerRadius = 15
         circle.addSubview(button2)
         
         let button3 = UIButton(frame: CGRectMake(150, 130, 20, 20))
@@ -60,6 +71,10 @@ class CelestialView: UIView {
         button3.alpha = 0.5
         button3.layer.cornerRadius = 10
         circle.addSubview(button3)
+    }
+    
+    func pressButton() {
+        self.delegate?.didPressAstroObj()
     }
     
     /*

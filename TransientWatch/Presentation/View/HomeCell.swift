@@ -9,7 +9,32 @@
 import UIKit
 
 class HomeCell: UITableViewCell {
-
+    
+    // MARK: - Property
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var raLabel: UILabel!
+    @IBOutlet weak var decLabel: UILabel!
+    @IBOutlet weak var classLabel: UILabel!
+    @IBOutlet weak var fluxChangeLabel: UILabel!
+    
+    var astroObj: AstroObj? {
+        didSet {
+            if let astro = self.astroObj {
+                self.nameLabel.text = astro.name
+                self.raLabel.text = astro.ra?.description
+                self.decLabel.text = astro.dec?.description
+                self.classLabel.text = astro.astroClassId?.description
+                if let rate = astro.fluxRate?.description {
+                    self.fluxChangeLabel.text = rate + "%"
+                }
+            }
+        }
+    }
+    
+    // MARK: - LifeCycle
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

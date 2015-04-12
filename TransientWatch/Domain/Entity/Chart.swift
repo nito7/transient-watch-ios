@@ -9,5 +9,44 @@
 import UIKit
 
 class Chart: NSObject {
-   
+    
+    // MARK: - Property
+    
+    var id: Int?
+    var bandID: Int?
+    var mjd: NSNumber?
+    var flux: NSNumber?
+    var err: NSNumber?
+    
+    // LifeCycle
+    
+    init(response: [String: AnyObject]) {
+        super.init()
+        
+        let id = response["id"] as? Int
+        
+        let bandID = response["band_id"] as? Int
+        
+        var mjd: NSNumber?
+        if let mjdFloat = response["mjd"] as? Float {
+            mjd = NSNumber(float: mjdFloat - 57000.0)
+        }
+        
+        var flux: NSNumber?
+        if let fluxFloat = response["flux"] as? Float {
+            flux = NSNumber(float: fluxFloat * 1000.0)
+        }
+        
+        var err: NSNumber?
+        if let errFloat = response["err"] as? Float {
+            err = NSNumber(float: errFloat * 1000.0)
+        }
+        
+        self.id = id
+        self.bandID = bandID
+        self.mjd = mjd
+        self.flux = flux
+        self.err = err
+    }
+    
 }
