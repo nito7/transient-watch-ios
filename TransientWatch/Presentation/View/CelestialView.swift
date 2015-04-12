@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CelestialViewDelegate {
-    func didPressAstroObj()
+    func didPressAstroObj(#id: Int)
 }
 
 class CelestialView: UIView {
@@ -65,16 +65,34 @@ class CelestialView: UIView {
         button2.alpha = 0.5
         button2.layer.cornerRadius = 15
         circle.addSubview(button2)
+        button2.addTarget(
+            self,
+            action: "pressButton2",
+            forControlEvents: UIControlEvents.TouchUpInside
+        )
         
         let button3 = UIButton(frame: CGRectMake(150, 130, 20, 20))
         button3.backgroundColor = UIColor.redColor()
         button3.alpha = 0.5
         button3.layer.cornerRadius = 10
         circle.addSubview(button3)
+        button3.addTarget(
+            self,
+            action: "pressButton3",
+            forControlEvents: UIControlEvents.TouchUpInside
+        )
     }
     
     func pressButton() {
-        self.delegate?.didPressAstroObj()
+        self.delegate?.didPressAstroObj(id: 1)
+    }
+    
+    func pressButton2() {
+        self.delegate?.didPressAstroObj(id: 2)
+    }
+    
+    func pressButton3() {
+        self.delegate?.didPressAstroObj(id: 3)
     }
     
     /*

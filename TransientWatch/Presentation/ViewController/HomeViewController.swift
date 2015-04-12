@@ -170,8 +170,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,
     
     // MARK: - CelestialViewDelegate
     
-    func didPressAstroObj() {
-        self.pushChartViewController(id: 1)
+    func didPressAstroObj(#id: Int) {
+        self.pushChartViewController(id: id)
     }
-    
 }
