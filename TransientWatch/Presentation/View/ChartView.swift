@@ -125,20 +125,7 @@ class ChartView: UIView, CPTPlotDataSource, CPTPlotSpaceDelegate {
         plotData.gapHeight = 3
         plotData.barLineStyle = dataStyle
         
-//        var dataStyle2 = CPTMutableLineStyle()
-//        dataStyle2.lineColor = CPTColor.greenColor()
-//        dataStyle2.lineWidth = 3.0
-//        var plotData2 = CPTRangePlot(frame: CGRectZero)
-//        plotData2.identifier = "Data2"
-//        plotData2.dataSource = self
-//        plotData2.barWidth = 5
-//        plotData2.gapWidth = 5
-//        plotData2.gapHeight = 5
-//        plotData2.barLineStyle = dataStyle2
-        
         graph.addPlot(plotData, toPlotSpace: plotSpace)
-//        graph.addPlot(plotData2, toPlotSpace: plotSpace)
-        
     }
     
     // MARK: -
