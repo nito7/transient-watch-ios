@@ -14,6 +14,7 @@ class ChartViewController: UIViewController, UITableViewDataSource,
     // MARK: - Property
     
     @IBOutlet weak var tableView: UITableView!
+    var chartArray: [Chart] = []
     
     // MARK: - LifeCycle
     
@@ -36,14 +37,12 @@ class ChartViewController: UIViewController, UITableViewDataSource,
         imageView.frame = self.view.bounds
         self.navigationController?.view.insertSubview(imageView, atIndex: 0)
         
-        let frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 300)
-        let chart = ChartView(frame: frame)
-        self.tableView.setParallaxHeaderView(chart, mode: VGParallaxHeaderMode.TopFill, height: 300)
-        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         let homeNib = UINib(nibName: "HomeCell", bundle: nil)
         self.tableView.registerNib(homeNib, forCellReuseIdentifier: "HomeCell")
+        
+        self.fetchChartData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +61,29 @@ class ChartViewController: UIViewController, UITableViewDataSource,
     */
     
     // MARK: - Private
+    
+    func fetchChartData() {
+        SVProgressHUD.show()
+        
+        ChartModel.GET(
+            success: { (task: NSURLSessionDataTask!, array: Array<Chart>!) -> Void in
+                
+                self.chartArray = array
+                
+                let frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 300)
+                let chart = ChartView(frame: frame)
+                chart.chartData = self.chartArray
+                chart.drawChart(frame)
+                self.tableView.setParallaxHeaderView(chart, mode: VGParallaxHeaderMode.TopFill, height: 300)
+                self.tableView.reloadData()
+                
+                SVProgressHUD.showSuccessWithStatus("load success")
+            },
+            failure: { (task: NSURLSessionDataTask!, error: NSError!) -> Void in
+                SVProgressHUD.showErrorWithStatus("load error")
+            }
+        )
+    }
     
     // MARK: - UITableView DataSource & Delegate
     
