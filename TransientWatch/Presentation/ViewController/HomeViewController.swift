@@ -95,10 +95,13 @@ class HomeViewController: UIViewController, UITableViewDataSource,
         )
     }
     
-    func pushChartViewController(#id: String) {
+    func pushChartViewController(#id: Int) {
+        
+        let astroObj = self.astroObjArray[id] as AstroObj
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let chartViewController = storyboard.instantiateViewControllerWithIdentifier("ChartViewController") as ChartViewController
+        chartViewController.astroObj = astroObj
         self.navigationController?.pushViewController(chartViewController, animated: true)
     }
     
@@ -140,7 +143,6 @@ class HomeViewController: UIViewController, UITableViewDataSource,
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell") as HomeCell
-        
         cell.astroObj = self.astroObjArray[indexPath.row]
         return cell
     }
@@ -148,7 +150,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        self.pushChartViewController(id: indexPath.row.description)
+        self.pushChartViewController(id: indexPath.row)
     }
     
     // MARK: - UIScrollViewDelegate
@@ -160,7 +162,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,
     // MARK: - CelestialViewDelegate
     
     func didPressAstroObj() {
-        self.pushChartViewController(id: "")
+        self.pushChartViewController(id: 1)
     }
     
 }

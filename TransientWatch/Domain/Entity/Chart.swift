@@ -29,7 +29,7 @@ class Chart: NSObject {
         
         var mjd: NSNumber?
         if let mjdFloat = response["mjd"] as? Float {
-            mjd = NSNumber(float: mjdFloat - 55000.0)
+            mjd = NSNumber(float: mjdFloat - 57000.0)
         }
         
         var flux: NSNumber?

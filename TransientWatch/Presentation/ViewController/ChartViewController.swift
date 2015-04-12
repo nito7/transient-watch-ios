@@ -16,6 +16,7 @@ class ChartViewController: UIViewController, UITableViewDataSource,
     @IBOutlet weak var tableView: UITableView!
     var astroObj: AstroObj?
     var chartArray: [Chart] = []
+    var chartView = ChartView(frame: CGRectZero)
     
     // MARK: - LifeCycle
     
@@ -41,6 +42,14 @@ class ChartViewController: UIViewController, UITableViewDataSource,
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        let frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 300)
+        self.chartView = ChartView(frame: frame)
+        self.tableView.setParallaxHeaderView(
+            self.chartView,
+            mode: VGParallaxHeaderMode.TopFill,
+            height: 300
+        )
         
         self.fetchChartData()
     }
@@ -75,10 +84,8 @@ class ChartViewController: UIViewController, UITableViewDataSource,
                 self.chartArray = array
                 
                 let frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 300)
-                let chart = ChartView(frame: frame)
-                chart.chartData = self.chartArray
-                chart.drawChart(frame)
-                self.tableView.setParallaxHeaderView(chart, mode: VGParallaxHeaderMode.TopFill, height: 300)
+                self.chartView.chartData = self.chartArray
+                self.chartView.drawChart(frame)
                 self.tableView.reloadData()
                 
                 SVProgressHUD.showSuccessWithStatus("load success")
@@ -104,7 +111,7 @@ class ChartViewController: UIViewController, UITableViewDataSource,
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return 6
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
