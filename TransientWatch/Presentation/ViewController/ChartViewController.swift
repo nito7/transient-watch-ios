@@ -161,6 +161,20 @@ class ChartViewController: UIViewController, UITableViewDataSource,
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if indexPath.row == 5 {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let browser = storyboard.instantiateViewControllerWithIdentifier("BrowserViewController") as BrowserViewController
+            if let url = self.astroObj?.link {
+                browser.url = NSURL(string: url)
+            }
+            self.navigationController?.pushViewController(browser, animated: true)
+            
+        }
+    }
+    
     // MARK: - UIScrollViewDelegate
     
     func scrollViewDidScroll(scrollView: UIScrollView) {

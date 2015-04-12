@@ -112,7 +112,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "New Update"
+        return "Watch"
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

@@ -19,7 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="WV3-Rr-I4R">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -60,7 +60,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Uij-Rv-Pe9">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -134,6 +134,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zae-0u-jwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="116" y="836"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2j8-A3-dCe">
+            <objects>
+                <navigationController id="8S3-9P-OGO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O2U-TB-keB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="AmB-dw-YEZ" kind="relationship" relationship="rootViewController" id="BvV-7O-gxg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gRx-zq-a0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-581" y="1574"/>
+        </scene>
+        <!--Browser View Controller-->
+        <scene sceneID="xrk-FP-mcj">
+            <objects>
+                <viewController storyboardIdentifier="BrowserViewController" id="AmB-dw-YEZ" customClass="BrowserViewController" customModule="TransientWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gEo-4a-VUs"/>
+                        <viewControllerLayoutGuide type="bottom" id="O0I-yL-cIg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bud-Ok-wsD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HNf-eQ-VTl">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="AmB-dw-YEZ" id="yBW-ka-Ak4"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HNf-eQ-VTl" firstAttribute="bottom" secondItem="O0I-yL-cIg" secondAttribute="top" id="Hou-16-wlI"/>
+                            <constraint firstAttribute="centerX" secondItem="HNf-eQ-VTl" secondAttribute="centerX" id="Ur9-qn-pJs"/>
+                            <constraint firstItem="HNf-eQ-VTl" firstAttribute="leading" secondItem="bud-Ok-wsD" secondAttribute="leading" id="jRW-m5-Wht"/>
+                            <constraint firstAttribute="centerY" secondItem="HNf-eQ-VTl" secondAttribute="centerY" id="lm8-Be-Asr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="euu-Qz-q9U"/>
+                    <connections>
+                        <outlet property="webView" destination="HNf-eQ-VTl" id="WxZ-pg-ww2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oQy-6E-FdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="110" y="1574"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="Egb-ao-YIb">

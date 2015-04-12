@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C24443E1ADA146500D4DDB6 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24443D1ADA146500D4DDB6 /* BrowserViewController.swift */; };
 		5C6477391AD9869900388713 /* AstroObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6477381AD9869900388713 /* AstroObj.swift */; };
 		5C64773B1AD9892400388713 /* AstroObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C64773A1AD9892400388713 /* AstroObjModel.swift */; };
 		5CA982681AD830A6001F299F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA982671AD830A6001F299F /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		2B4C63CA9625D6083E9AD0F7 /* libPods-TransientWatch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TransientWatch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C24443D1ADA146500D4DDB6 /* BrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		5C6477381AD9869900388713 /* AstroObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstroObj.swift; sourceTree = "<group>"; };
 		5C64773A1AD9892400388713 /* AstroObjModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstroObjModel.swift; sourceTree = "<group>"; };
 		5CA982621AD830A6001F299F /* TransientWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransientWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,6 +257,7 @@
 				84EAC9E91AD90D110081900D /* MenuViewController.swift */,
 				84EAC9EB1AD90D3F0081900D /* SettingNotificationViewController.swift */,
 				5CEE6DF41AD9A06C003379C8 /* ChartViewController.swift */,
+				5C24443D1ADA146500D4DDB6 /* BrowserViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CB0B92F1AD8AF2D005F86B3 /* Chart.swift in Sources */,
+				5C24443E1ADA146500D4DDB6 /* BrowserViewController.swift in Sources */,
 				84EAC9EA1AD90D110081900D /* MenuViewController.swift in Sources */,
 				5CB0B92A1AD8AECA005F86B3 /* API.swift in Sources */,
 				5CC6808A1AD97CD60008F65E /* WatchModel.swift in Sources */,
