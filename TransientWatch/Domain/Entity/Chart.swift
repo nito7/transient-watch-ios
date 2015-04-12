@@ -29,17 +29,17 @@ class Chart: NSObject {
         
         var mjd: NSNumber?
         if let mjdFloat = response["mjd"] as? Float {
-            mjd = NSNumber(float: mjdFloat)
+            mjd = NSNumber(float: mjdFloat - 55000.0)
         }
         
         var flux: NSNumber?
         if let fluxFloat = response["flux"] as? Float {
-            flux = NSNumber(float: fluxFloat)
+            flux = NSNumber(float: fluxFloat * 1000.0)
         }
         
         var err: NSNumber?
         if let errFloat = response["err"] as? Float {
-            err = NSNumber(float: errFloat)
+            err = NSNumber(float: errFloat * 1000.0)
         }
         
         self.id = id

@@ -67,14 +67,17 @@ class ChartViewController: UIViewController, UITableViewDataSource,
         
         ChartModel.GET(
             success: { (task: NSURLSessionDataTask!, array: Array<Chart>!) -> Void in
-                SVProgressHUD.showSuccessWithStatus("load success")
                 
                 self.chartArray = array
                 
                 let frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 300)
                 let chart = ChartView(frame: frame)
+                chart.chartData = self.chartArray
+                chart.drawChart(frame)
                 self.tableView.setParallaxHeaderView(chart, mode: VGParallaxHeaderMode.TopFill, height: 300)
                 self.tableView.reloadData()
+                
+                SVProgressHUD.showSuccessWithStatus("load success")
             },
             failure: { (task: NSURLSessionDataTask!, error: NSError!) -> Void in
                 SVProgressHUD.showErrorWithStatus("load error")

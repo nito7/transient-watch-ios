@@ -20,15 +20,14 @@ class ChartView: UIView, CPTPlotDataSource, CPTPlotSpaceDelegate {
     }
     */
     
+    var chartData: [Chart] = []
+    
     var scatterPlotData: [[NSNumber: NSNumber]] = []
-    var scatterPlotData2: [[NSNumber: NSNumber]] = []
     
     // MARK: - LifeCycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        self.drawChart(frame)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -46,26 +45,25 @@ class ChartView: UIView, CPTPlotDataSource, CPTPlotSpaceDelegate {
         
         let r =  arc4random_uniform(10)
         
-        for var i = 0; i < 10; i++ {
-            let x = NSNumber(integer: i)
-            let y = NSNumber(integer: (10 * i))
-            let maxY = NSNumber(integer: 10)
-            let minY = NSNumber(integer: 10)
+        for var i = 0; i < self.chartData.count; i++ {
+            let chart = self.chartData[i] as Chart
+            var x: NSNumber = 0
+            if let mjd = chart.mjd {
+                x = mjd
+            }
+            var y: NSNumber = 0
+            if let flux = chart.flux {
+                y = flux
+            }
+            var maxY: NSNumber = 0
+            var minY: NSNumber = 0
+            if let err = chart.err {
+                maxY = err
+                minY = err
+            }
             
-            let object = [fieldX : x, fieldY: y, fieldMaxY: maxY, fieldMinY: minY]
-            
+            let object: [NSNumber: NSNumber] = [fieldX : x, fieldY: y, fieldMaxY: maxY, fieldMinY: minY]
             self.scatterPlotData.append(object)
-        }
-        
-        for var i = 0; i < 10; i++ {
-            let x = NSNumber(integer: i)
-            let y = NSNumber(integer: (20 * i))
-            let maxY = NSNumber(integer: 10)
-            let minY = NSNumber(integer: 10)
-            
-            let object = [fieldX : x, fieldY: y, fieldMaxY: maxY, fieldMinY: minY]
-            
-            self.scatterPlotData2.append(object)
         }
         
         let hostingView = CPTGraphHostingView(frame: frame)
@@ -85,22 +83,17 @@ class ChartView: UIView, CPTPlotDataSource, CPTPlotSpaceDelegate {
         graph.plotAreaFrame.paddingRight  = 20.0
         graph.plotAreaFrame.paddingBottom = 30.0
         
-        var axes = graph.axisSet as? CPTXYAxisSet
-        var y = axes!.yAxis
-        y.majorIntervalLength = 10
-        y.minorTickLength = 0
-        //        y.delegate = self
+        var axes = graph.axisSet as CPTXYAxisSet
+        var y = axes.yAxis
         
-        var x = axes!.xAxis
-        //        x.majorIntervalLength = NSDecimalNumber(float: 10.0)
-        //        x.minorTickLength = 0
-        //        x.labelRotation = CGFloat(M_PI/2.0)
+        var x = axes.xAxis
+        x.majorIntervalLength = 10
         
         var gridStyle = CPTMutableLineStyle()
         gridStyle.lineColor = CPTColor.lightGrayColor()
         gridStyle.lineWidth = 1.0
         gridStyle.dashPattern = [2.0,5.0]
-        y.majorGridLineStyle = gridStyle
+//        y.majorGridLineStyle = gridStyle
         x.majorGridLineStyle = gridStyle
         
         var textStyle = CPTMutableTextStyle()
@@ -112,40 +105,39 @@ class ChartView: UIView, CPTPlotDataSource, CPTPlotSpaceDelegate {
         var lineStyle = CPTMutableLineStyle()
         lineStyle.lineColor = CPTColor.blackColor()
         lineStyle.lineWidth = 1.0
-        axes!.xAxis.axisLineStyle = lineStyle
-        axes!.yAxis.axisLineStyle = lineStyle
+        axes.xAxis.axisLineStyle = lineStyle
+        axes.yAxis.axisLineStyle = lineStyle
         
         var plotSpace = graph.defaultPlotSpace as CPTXYPlotSpace
         plotSpace.allowsUserInteraction = true
-        plotSpace.xRange = CPTPlotRange(location: 0, length: 10)
-        plotSpace.yRange = CPTPlotRange(location: 0, length: 100)
+        plotSpace.xRange = CPTPlotRange(location: 0, length: 100)
+        plotSpace.yRange = CPTPlotRange(location: -15, length: 30)
         plotSpace.delegate = self
-        
         
         var dataStyle = CPTMutableLineStyle()
         dataStyle.lineColor = CPTColor.redColor()
-        dataStyle.lineWidth = 3.0
+        dataStyle.lineWidth = 1
         var plotData = CPTRangePlot(frame: CGRectZero)
         plotData.identifier = "Data1"
         plotData.dataSource = self
-        plotData.barWidth = 5
-        plotData.gapWidth = 5
-        plotData.gapHeight = 5
+        plotData.barWidth = 3
+        plotData.gapWidth = 3
+        plotData.gapHeight = 3
         plotData.barLineStyle = dataStyle
         
-        var dataStyle2 = CPTMutableLineStyle()
-        dataStyle2.lineColor = CPTColor.greenColor()
-        dataStyle2.lineWidth = 3.0
-        var plotData2 = CPTRangePlot(frame: CGRectZero)
-        plotData2.identifier = "Data2"
-        plotData2.dataSource = self
-        plotData2.barWidth = 5
-        plotData2.gapWidth = 5
-        plotData2.gapHeight = 5
-        plotData2.barLineStyle = dataStyle2
+//        var dataStyle2 = CPTMutableLineStyle()
+//        dataStyle2.lineColor = CPTColor.greenColor()
+//        dataStyle2.lineWidth = 3.0
+//        var plotData2 = CPTRangePlot(frame: CGRectZero)
+//        plotData2.identifier = "Data2"
+//        plotData2.dataSource = self
+//        plotData2.barWidth = 5
+//        plotData2.gapWidth = 5
+//        plotData2.gapHeight = 5
+//        plotData2.barLineStyle = dataStyle2
         
         graph.addPlot(plotData, toPlotSpace: plotSpace)
-        graph.addPlot(plotData2, toPlotSpace: plotSpace)
+//        graph.addPlot(plotData2, toPlotSpace: plotSpace)
         
     }
     
@@ -157,28 +149,24 @@ class ChartView: UIView, CPTPlotDataSource, CPTPlotSpaceDelegate {
     
     func numberForPlot(plot: CPTPlot!, field fieldEnum: UInt, recordIndex idx: UInt) -> NSNumber! {
         
-        let field: CPTRangePlotField = CPTRangePlotField(rawValue: Int(fieldEnum))!
-        let data: [NSNumber: NSNumber] = self.scatterPlotData[Int(idx)]
-        
-        switch field {
-        case .X:
-            println("X座標")
-        case .Y:
-            println("Y座標")
-        case .High:
-            println("MaxY座標")
-        case .Low:
-            println("MinY座標")
-        default:
-            println("なし")
-        }
+//        let field: CPTRangePlotField = CPTRangePlotField(rawValue: Int(fieldEnum))!
+//        let data: [NSNumber: NSNumber] = self.scatterPlotData[Int(idx)]
+//        
+//        switch field {
+//        case .X:
+//            println("X座標")
+//        case .Y:
+//            println("Y座標")
+//        case .High:
+//            println("MaxY座標")
+//        case .Low:
+//            println("MinY座標")
+//        default:
+//            println("なし")
+//        }
         
         if plot.identifier.isEqual("Data1") {
             let object: [NSNumber: NSNumber] = self.scatterPlotData[Int(idx)]
-            return object[fieldEnum]
-        }
-        else if plot.identifier.isEqual("Data2") {
-            let object: [NSNumber: NSNumber] = self.scatterPlotData2[Int(idx)]
             return object[fieldEnum]
         }
         else {
