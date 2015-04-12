@@ -26,10 +26,11 @@ class BrowserViewController: UIViewController, NJKWebViewProgressDelegate, UIWeb
         
         //色を変えるには、[_progressView・・・]の下に下記の行を追加する事で変更可能です。ここでは赤にしていますが、何色でも可能です。
         */
-        let h = 3.5
+        let h = 8
         let navbarBounds = self.navigationController?.navigationBar.bounds
-        let frame = CGRectMake(0, 44.0 - CGFloat(h), CGRectGetWidth(self.view.frame), CGFloat(h))
+        let frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGFloat(h))
         self.progressView =  NJKWebViewProgressView(frame: frame)
+        self.view.addSubview(self.progressView)
         
         self.proxy = NJKWebViewProgress()
         self.webView.delegate = self.proxy

@@ -16,6 +16,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,
     
     @IBOutlet weak var tableView: UITableView!
     var astroObjArray: [AstroObj] = []
+    var headerView = CelestialView(frame: CGRectZero)
     
     // MARK: - LifeCycle
     
@@ -49,9 +50,9 @@ class HomeViewController: UIViewController, UITableViewDataSource,
         // ヘッダー設定
         ////////////////
 //        let headerView = CelestialView.instance()
-        let headerView = CelestialView(frame: CGRectMake(0, 0, self.view.frame.size.width - 20, 300))
-        headerView.delegate = self
-        self.tableView.setParallaxHeaderView(headerView, mode: VGParallaxHeaderMode.Top, height: 300)
+        self.headerView = CelestialView(frame: CGRectMake(0, 0, self.view.frame.size.width - 20, 300))
+        self.headerView.delegate = self
+        self.tableView.setParallaxHeaderView(self.headerView, mode: VGParallaxHeaderMode.Top, height: 300)
         
         /////////////////
         // TableView設定
@@ -62,6 +63,11 @@ class HomeViewController: UIViewController, UITableViewDataSource,
         self.tableView.registerNib(homeNib, forCellReuseIdentifier: "HomeCell")
         
         self.fetchAstroObj()
+    }
+    
+    deinit {
+        self.headerView.delegate = nil
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,7 +93,10 @@ class HomeViewController: UIViewController, UITableViewDataSource,
                 SVProgressHUD.showSuccessWithStatus("load success")
                 
                 self.astroObjArray = array
-                self.tableView.reloadData()
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
             },
             failure: { (task: NSURLSessionDataTask!, error: NSError!) -> Void in
                 SVProgressHUD.showErrorWithStatus("load error")

@@ -86,10 +86,12 @@ class ChartViewController: UIViewController, UITableViewDataSource,
                 
                 let frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 300)
                 self.chartView.chartData = self.chartArray
-                self.chartView.drawChart(frame)
-                self.tableView.reloadData()
                 
-                SVProgressHUD.showSuccessWithStatus("load success")
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.chartView.drawChart(frame)
+                    self.tableView.reloadData()
+                    SVProgressHUD.showSuccessWithStatus("load success")
+                })
             },
             failure: { (task: NSURLSessionDataTask!, error: NSError!) -> Void in
                 SVProgressHUD.showErrorWithStatus("load error")

@@ -34,6 +34,11 @@ class ChartView: UIView, CPTPlotDataSource, CPTPlotSpaceDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        self.chartData = []
+        self.scatterPlotData = []
+    }
+    
     // MARK: - Private
     
     func drawChart(frame: CGRect) {
@@ -162,7 +167,7 @@ class ChartView: UIView, CPTPlotDataSource, CPTPlotSpaceDelegate {
     }
     
     func plotSpace(space: CPTPlotSpace!, shouldHandlePointingDeviceUpEvent event: UIEvent!, atPoint point: CGPoint) -> Bool {
-        return false
+        return true
     }
     
 }
