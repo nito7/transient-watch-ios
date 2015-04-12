@@ -14,13 +14,14 @@ class ChartViewController: UIViewController, UITableViewDataSource,
     // MARK: - Property
     
     @IBOutlet weak var tableView: UITableView!
+    var astroObj: AstroObj?
     var chartArray: [Chart] = []
     
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Chart"
+        self.title = astroObj?.name
         
         self.navigationController?.navigationBar.barStyle = .Black
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
@@ -39,8 +40,7 @@ class ChartViewController: UIViewController, UITableViewDataSource,
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        let homeNib = UINib(nibName: "HomeCell", bundle: nil)
-        self.tableView.registerNib(homeNib, forCellReuseIdentifier: "HomeCell")
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
         self.fetchChartData()
     }
@@ -91,10 +91,6 @@ class ChartViewController: UIViewController, UITableViewDataSource,
         return 1
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Other"
-    }
-    
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
@@ -122,7 +118,29 @@ class ChartViewController: UIViewController, UITableViewDataSource,
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell") as HomeCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+        cell.backgroundColor = UIColor.clearColor()
+        cell.textLabel?.textColor = UIColor.whiteColor()
+        
+        if indexPath.row == 0 {
+            cell.textLabel?.text = astroObj?.name
+        }
+        else if indexPath.row == 1 {
+            cell.textLabel?.text = "Ra: \(astroObj?.ra)"
+        }
+        else if indexPath.row == 2 {
+            cell.textLabel?.text = "Dec: \(astroObj?.dec)"
+        }
+        else if indexPath.row == 3 {
+            cell.textLabel?.text = "Class: \(astroObj?.astroClassId)"
+        }
+        else if indexPath.row == 4 {
+            cell.textLabel?.text = "Flux Chane: 100%"
+        }
+        else if indexPath.row == 5 {
+            cell.textLabel?.text = "Date URL: \(astroObj?.link)"
+        }
+        
         return cell
     }
     
