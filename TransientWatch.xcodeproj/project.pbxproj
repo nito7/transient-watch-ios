@@ -25,6 +25,8 @@
 		5CC6EE9A1AD94A6100E421EB /* CelestialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6EE991AD94A6100E421EB /* CelestialView.swift */; };
 		5CC6EE9E1AD94A8400E421EB /* CelestialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC6EE9D1AD94A8400E421EB /* CelestialView.xib */; };
 		5CEE6DF51AD9A06C003379C8 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE6DF41AD9A06C003379C8 /* ChartViewController.swift */; };
+		5CFAD1F71ADA0C3500670C06 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFAD1F51ADA0C3500670C06 /* ChartCell.swift */; };
+		5CFAD1F81ADA0C3500670C06 /* ChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CFAD1F61ADA0C3500670C06 /* ChartCell.xib */; };
 		5CFD85561AD9410600BBB6ED /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD85541AD9410600BBB6ED /* HomeCell.swift */; };
 		5CFD85571AD9410600BBB6ED /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CFD85551AD9410600BBB6ED /* HomeCell.xib */; };
 		845F15BF1AD94EB7005BEF59 /* AstroClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F15BE1AD94EB7005BEF59 /* AstroClass.swift */; };
@@ -71,6 +73,8 @@
 		5CC6EE991AD94A6100E421EB /* CelestialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelestialView.swift; sourceTree = "<group>"; };
 		5CC6EE9D1AD94A8400E421EB /* CelestialView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CelestialView.xib; sourceTree = "<group>"; };
 		5CEE6DF41AD9A06C003379C8 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		5CFAD1F51ADA0C3500670C06 /* ChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
+		5CFAD1F61ADA0C3500670C06 /* ChartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartCell.xib; sourceTree = "<group>"; };
 		5CFD85541AD9410600BBB6ED /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		5CFD85551AD9410600BBB6ED /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		845F15BE1AD94EB7005BEF59 /* AstroClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstroClass.swift; sourceTree = "<group>"; };
@@ -238,6 +242,8 @@
 				84EAC9EF1AD924C30081900D /* SettingNotificationCell.xib */,
 				5CFD85541AD9410600BBB6ED /* HomeCell.swift */,
 				5CFD85551AD9410600BBB6ED /* HomeCell.xib */,
+				5CFAD1F51ADA0C3500670C06 /* ChartCell.swift */,
+				5CFAD1F61ADA0C3500670C06 /* ChartCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 				5CA9826D1AD830A6001F299F /* Main.storyboard in Resources */,
 				84EAC9F01AD924C30081900D /* SettingNotificationCell.xib in Resources */,
 				5CB0B9471AD8B22F005F86B3 /* LaunchScreen.xib in Resources */,
+				5CFAD1F81ADA0C3500670C06 /* ChartCell.xib in Resources */,
 				5CA9826F1AD830A6001F299F /* Images.xcassets in Resources */,
 				5CFD85571AD9410600BBB6ED /* HomeCell.xib in Resources */,
 				5CC6EE9E1AD94A8400E421EB /* CelestialView.xib in Resources */,
@@ -456,6 +463,7 @@
 				5CC6EE9A1AD94A6100E421EB /* CelestialView.swift in Sources */,
 				5CB0B9361AD8AFD3005F86B3 /* ChartView.swift in Sources */,
 				5CB0B9401AD8B0BF005F86B3 /* SVProgressHUD+Extension.swift in Sources */,
+				5CFAD1F71ADA0C3500670C06 /* ChartCell.swift in Sources */,
 				5CB0B9431AD8B115005F86B3 /* Setting.swift in Sources */,
 				84EAC9F21AD9405A0081900D /* AstroClassModel.swift in Sources */,
 				5C6477391AD9869900388713 /* AstroObj.swift in Sources */,
