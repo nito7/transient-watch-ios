@@ -65,7 +65,11 @@ class ChartViewController: UIViewController, UITableViewDataSource,
     func fetchChartData() {
         SVProgressHUD.show()
         
+        var id = 1
+        if let validId = self.astroObj?.id { id = validId }
+        
         ChartModel.GET(
+            id: id.description,
             success: { (task: NSURLSessionDataTask!, array: Array<Chart>!) -> Void in
                 
                 self.chartArray = array

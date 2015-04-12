@@ -11,13 +11,14 @@ import UIKit
 class ChartModel: NSObject {
     
     class func GET(
-        #success: ((NSURLSessionDataTask!, Array<Chart>!) -> Void)!,
+        #id: String,
+        success: ((NSURLSessionDataTask!, Array<Chart>!) -> Void)!,
         failure: ((NSURLSessionDataTask!, NSError!) -> Void)!) {
             
             var chartArray: [Chart] = []
             
             API.sharedInstance.GET(
-                "http://www12480uf.sakura.ne.jp:3000/lightcurves/416",
+                "http://www12480uf.sakura.ne.jp:3000/lightcurves/\(id)",
                 parameters: nil,
                 success: { (task: NSURLSessionDataTask!, result: AnyObject!) -> Void in
                     var responseArray = result as NSArray
