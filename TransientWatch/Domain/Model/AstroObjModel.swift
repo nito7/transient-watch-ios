@@ -19,7 +19,7 @@ class AstroObjModel: NSObject {
             var astroObjArray: [AstroObj] = []
             
             API.sharedInstance.GET(
-                "http://www12480uf.sakura.ne.jp:3000/astroObjs/",
+                "http://www12480uf.sakura.ne.jp:3000/watches/",
                 parameters: nil,
                 success: { (task: NSURLSessionDataTask!, result: AnyObject!) -> Void in
                     var responseArray = result as NSArray

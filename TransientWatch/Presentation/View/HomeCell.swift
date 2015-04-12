@@ -25,7 +25,9 @@ class HomeCell: UITableViewCell {
                 self.raLabel.text = astro.ra?.description
                 self.decLabel.text = astro.dec?.description
                 self.classLabel.text = astro.astroClassId?.description
-                self.fluxChangeLabel.text = "100%"
+                if let rate = astro.fluxRate?.description {
+                    self.fluxChangeLabel.text = rate + "%"
+                }
             }
         }
     }

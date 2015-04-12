@@ -17,6 +17,7 @@ class AstroObj: NSObject {
     var ra: Float?
     var dec: Float?
     var astroClassId: Int?
+    var fluxRate: Int?
     var link: String?
     
     // MARK: - LifeCycle
@@ -24,18 +25,22 @@ class AstroObj: NSObject {
     init(response: [String: AnyObject?]) {
         super.init()
         
-        let id = response["id"] as? Int
-        let name = response["name"] as? String
-        let ra = response["ra"] as? Float
-        let dec = response["dec"] as? Float
-        let astroClassId = response["astro_class_id"] as? Int
-        let link = response["link"] as? String
+        let fluxRate = response["flux_rate"] as? Int
+        
+        let astroObj = response["astroObj"] as [String: AnyObject]
+        let id = astroObj["id"] as? Int
+        let name = astroObj["name"] as? String
+        let ra = astroObj["ra"] as? Float
+        let dec = astroObj["dec"] as? Float
+        let astroClassId = astroObj["astro_class_id"] as? Int
+        let link = astroObj["link"] as? String
         
         self.id = id
         self.name = name
         self.ra = ra
         self.dec = dec
         self.astroClassId = astroClassId
+        self.fluxRate = fluxRate
         self.link = link
     }
 }

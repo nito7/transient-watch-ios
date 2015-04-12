@@ -152,7 +152,9 @@ class ChartViewController: UIViewController, UITableViewDataSource,
         }
         else if indexPath.row == 4 {
             cell.sectionLabel.text = "Flux Chane:"
-            cell.valueLabel.text = "100%"
+            if let rate = self.astroObj?.fluxRate?.description {
+                cell.valueLabel.text = rate + "%"
+            }
         }
         else if indexPath.row == 5 {
             cell.sectionLabel.text = "Date URL:"
