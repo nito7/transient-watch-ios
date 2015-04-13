@@ -10,20 +10,12 @@ import UIKit
 
 class SettingNotificationViewController: UIViewController {
 
-    @IBOutlet var SettingNotificationTableView: UITableView!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        AstroClassModel.index(["": ""],
-            success: {(res: NSArray!) -> Void in
-                
-            },
-            failure: {(error: NSError!) -> Void in
-                
-            }
-        )
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +23,8 @@ class SettingNotificationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func openMenu(sender: UIBarButtonItem) {
+    
+    @IBAction func pressMenuButton(sender: AnyObject) {
         self.mm_drawerController.toggleDrawerSide(.Left, animated: true, completion: nil)
     }
 

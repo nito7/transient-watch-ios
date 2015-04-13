@@ -1,1 +1,2 @@
 # transient-watch-ios
+By pushing express news about the brightening of high-energy objects, we aim both to speed up high-energy astronomer’s research and to enlighten many fans of astronomy about activity in space that involves high-energy bands. Our system is composed of a batch system (which scrapes Swift/Fermi/MAXI Web sites and collects much light curve data about transient objects), API back-end, and iOS front-end App (which notifies you about brightening objects and their lightcurves).

@@ -8,11 +8,15 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource,
+                                            UITableViewDelegate,
+                                            CelestialViewDelegate {
     
     // MARK: - Property
     
     @IBOutlet weak var tableView: UITableView!
+    var astroObjArray: [AstroObj] = []
+    var headerView = CelestialView(frame: CGRectZero)
     
     // MARK: - LifeCycle
     
@@ -41,17 +45,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let imageView = UIImageView(image: backGroundImage)
         imageView.frame = self.view.bounds
         self.navigationController?.view.insertSubview(imageView, atIndex: 0)
-        
-//        let frame = CGRectMake(0, 50, CGRectGetWidth(self.view.frame), 450)
-//        let chart = ChartView(frame: frame)
-//        self.view.addSubview(chart)
-        
+                
         ////////////////
         // ヘッダー設定
         ////////////////
 //        let headerView = CelestialView.instance()
-        let headerView = CelestialView(frame: CGRectMake(0, 0, self.view.frame.size.width - 20, 300))
-        self.tableView.setParallaxHeaderView(headerView, mode: VGParallaxHeaderMode.TopFill, height: 300)
+        self.headerView = CelestialView(frame: CGRectMake(0, 0, self.view.frame.size.width - 20, 300))
+        self.headerView.delegate = self
+        self.tableView.setParallaxHeaderView(self.headerView, mode: VGParallaxHeaderMode.Top, height: 300)
         
         /////////////////
         // TableView設定
@@ -60,6 +61,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableView.delegate = self
         let homeNib = UINib(nibName: "HomeCell", bundle: nil)
         self.tableView.registerNib(homeNib, forCellReuseIdentifier: "HomeCell")
+        
+        self.fetchAstroObj()
+    }
+    
+    deinit {
+        self.headerView.delegate = nil
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,7 +78,40 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Private
     
     @IBAction func toggleMenu(sender: UIBarButtonItem) {
-        self.mm_drawerController.toggleDrawerSide(.Left, animated: true, completion: nil)
+        self.mm_drawerController.toggleDrawerSide(
+            .Left,
+            animated: true,
+            completion: nil
+        )
+    }
+    
+    func fetchAstroObj() {
+        SVProgressHUD.show()
+        
+        AstroObjModel.GET(
+            success: { (task: NSURLSessionDataTask!, array: Array<AstroObj>!) -> Void in
+                SVProgressHUD.showSuccessWithStatus("load success")
+                
+                self.astroObjArray = array
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
+            },
+            failure: { (task: NSURLSessionDataTask!, error: NSError!) -> Void in
+                SVProgressHUD.showErrorWithStatus("load error")
+            }
+        )
+    }
+    
+    func pushChartViewController(#id: Int) {
+        
+        let astroObj = self.astroObjArray[id] as AstroObj
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let chartViewController = storyboard.instantiateViewControllerWithIdentifier("ChartViewController") as ChartViewController
+        chartViewController.astroObj = astroObj
+        self.navigationController?.pushViewController(chartViewController, animated: true)
     }
     
     // MARK: - UITableView DataSource & Delegate
@@ -80,7 +121,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "New Update"
+        return "Watch"
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -92,7 +133,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.astroObjArray.count
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -111,7 +152,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell") as HomeCell
+        cell.astroObj = self.astroObjArray[indexPath.row]
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        self.pushChartViewController(id: indexPath.row)
     }
     
     // MARK: - UIScrollViewDelegate
@@ -119,5 +167,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func scrollViewDidScroll(scrollView: UIScrollView) {
         scrollView.shouldPositionParallaxHeader()
     }
-
+    
+    // MARK: - CelestialViewDelegate
+    
+    func didPressAstroObj(#id: Int) {
+        self.pushChartViewController(id: id)
+    }
 }

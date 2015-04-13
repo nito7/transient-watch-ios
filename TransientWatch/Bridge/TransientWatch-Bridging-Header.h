@@ -8,3 +8,5 @@
 #import <MMDrawerController/UIViewController+MMDrawerController.h>
 #import <CorePlot-CocoaTouch.h>
 #import <VGParallaxHeader/UIScrollView+VGParallaxHeader.h>
+#import <NJKWebViewProgress/NJKWebViewProgressView.h>
+#import <NJKWebViewProgress/NJKWebViewProgress.h>
